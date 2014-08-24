@@ -30,12 +30,27 @@ f <- factor(c("yes","no","maybe","maybe"))
 print(f)
 table(f)
 unclass(f)
+f1 <- c(3,2,1,1)
+names(f1) <- c("yes","maybe","no")
+print(f1)
+table(f1)
+unclass(f1)
+#subsetting matrices
+m <- matrix(10:15,nrow=3,ncol=2)
+m1 <- m[1,,drop=FALSE]
+m2 <- m[1,2]
+print(class(m))
+print(class(m1))
+print(class(m2))
+m
+m1
+m2
 #subsetting lists
 lx <- list(foo = 1:4, bar = 0.6, baz="i love baz")
 print(lx[c(1,3)])
 print(lx[2])
-print(lx[[1]][[3]])
-print(lx[[c(1,3)]])
+print(lx[[3]][[3]])
+print(lx[[c(3,3)]])
 print(lx$f)  #partial matching
 print(lx[["b", exact=FALSE]])  #partial matching
 #removing NA values
